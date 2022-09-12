@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>todo</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+
+<!-- THE DAY AND DATE HEADING -->
+    <div class="box" id="heading">
+    <h1> <%=listtitle%></h1>
+    </div>
+
+<!-- THE TASK LIST -->
+    <div class="box">
+  <%  for (var i=0 ; i<newlistitems.length ;i++){ %>
+    <div class="item">
+      <input class="chckbox" type="checkbox" >
+      <p><%= newlistitems[i]%></p>
+    </div>
+
+<% }%>
+
+<!-- THE PLUS SIGN TO ADD NEW TASK IN THE LIST -->
+<form class="item" action="/" method="post">
+  <input type="text" name="newitem" placeholder="new item" autocomplete="off">
+  <button type="submit" name="button">+</button>
+</form>
+</div>
+  </body>
+</html>
