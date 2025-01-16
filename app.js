@@ -41,7 +41,7 @@ app.get("/work", function (req, res) {
   });
 });
 
-app.post("/work", function (req, res) {
+app.post("/work",(req, res)=> {
   let item = req.body.newitem;
 
   // Add the new item to the 'workitems' array
@@ -50,11 +50,11 @@ app.post("/work", function (req, res) {
 });
 
 // Route to clear the items array
-app.post("/clear", function (req, res) {
+app.post("/clear", (req, res)=> {
   items = [];  // Empty the items array
   res.redirect("/");  // Redirect to the home page with the list cleared
 });
 
-app.listen(3000, function () {
+app.listen(process.env.PORT ||3000, ()=> {
   console.log("server running");
 });
