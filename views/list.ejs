@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -7,26 +8,33 @@
   </head>
   <body>
 
-<!-- THE DAY AND DATE HEADING -->
+    <!-- THE DAY AND DATE HEADING -->
     <div class="box" id="heading">
-    <h1> <%=listtitle%></h1>
+      <h1> <%= listtitle %> </h1>
     </div>
 
-<!-- THE TASK LIST -->
-    <div class="box">
-  <%  for (var i=0 ; i<newlistitems.length ;i++){ %>
-    <div class="item">
-      <input class="chckbox" type="checkbox" >
-      <p><%= newlistitems[i]%></p>
+    <!-- THE TASK LIST -->
+    <div class="box" id="task-list">
+      <% for (var i = 0; i < newlistitems.length; i++) { %>
+        <div class="item">
+          <input class="chckbox" type="checkbox">
+          <p><%= newlistitems[i] %></p>
+        </div>
+      <% } %>
+
+      <!-- THE PLUS SIGN TO ADD NEW TASK IN THE LIST -->
+      <form class="item" action="/" method="post">
+        <input type="text" name="newitem" placeholder="new item" autocomplete="off">
+        <button class="addItemButton"type="submit" name="button">+</button>
+      </form>
     </div>
 
-<% }%>
-
-<!-- THE PLUS SIGN TO ADD NEW TASK IN THE LIST -->
-<form class="item" action="/" method="post">
-  <input type="text" name="newitem" placeholder="new item" autocomplete="off">
-  <button type="submit" name="button">+</button>
-</form>
-</div>
+    <!-- SEPARATE SECTION FOR THE "CLEAR ALL" BUTTON -->
+    <div class="clear-button-container">
+      <form class="button" action="/clear" method="post">
+        <button type="submit" class="clear-button">Clear All</button>
+      </form>
+    </div>
+    
   </body>
 </html>

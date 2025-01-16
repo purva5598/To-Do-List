@@ -63,7 +63,6 @@ form {
 
 button {
   min-height: 50px;
-  width: 50px;
   border-radius: 15%;
   border-color: transparent;
   background-color: #c38888;
@@ -72,7 +71,9 @@ button {
   padding-bottom: 6px;
   border-width: 0;
 }
-
+.addItemButton{
+  width: 50px;
+}
 input[type="text"] {
   text-align: center;
   height: 60px;
@@ -99,3 +100,24 @@ footer {
   color: rgba(0, 0, 0, 0.5);
   text-align: center;
 }
+
+/* Center the Clear All Button */
+.clear-button-container {
+  text-align: center;
+  margin-top: 20px;  /* Add some space between the list and the button */
+}
+
+.clear-button {
+  padding: 10px 20px;
+  background-color: #c38888;  /* You can customize the color */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #986b6b;  /* Darker shade for hover effect */
+}
+
